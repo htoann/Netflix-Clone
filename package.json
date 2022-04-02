@@ -8,6 +8,9 @@
     "start": "nodemon index.js",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build"
   },
+  "engines": {
+    "node": "14.17.4"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
