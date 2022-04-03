@@ -1,4 +1,4 @@
-# Netflix
+# Netflix API
 
 A netflix clone website built with React and Node
 
@@ -19,8 +19,8 @@ A netflix clone website built with React and Node
 To run this project, install it locally using npm (or yarn):
 
 ```
-yarn
-yarn start
+npm
+npm start
 ```
 
 ## Sources
