@@ -22,20 +22,19 @@ router.post("/", verify, async (req, res) => {
 router.put("/:id", verify, async (req, res) => {
   if (req.user.isAdmin) {
     try {
-      const updateMovie = await newMovie.findById(
+      const updatedMovie = await Movie.findByIdAndUpdate(
         req.params.id,
         {
           $set: req.body,
         },
         { new: true }
       );
-
-      res.json(updateMovie);
+      res.status(200).json(updatedMovie);
     } catch (err) {
-      res.json(err);
+      res.status(500).json(err);
     }
   } else {
-    res.json("You are not allowed!");
+    res.status(403).json("You are not allowed!");
   }
 });
 
