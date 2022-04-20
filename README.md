@@ -1,6 +1,6 @@
 # Netflix API
 
-A netflix clone website built with React and Node
+Netflix API for a netflix clone website built with React and Node
 
 ## Table of contents
 
@@ -11,7 +11,7 @@ A netflix clone website built with React and Node
 
 ## Technologies
 
-- [React](https://github.com/facebook/react), [Node](https://github.com/nodejs/node), [Tailwind](https://github.com/tailwindlabs/tailwindcss), [MongoDB](https://www.mongodb.com/)
+- [Node](https://github.com/nodejs/node), [MongoDB](https://www.mongodb.com/)
 - Libraries:
 
 ## Setup
