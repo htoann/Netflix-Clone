@@ -73,7 +73,7 @@ router.get("/random", verify, async (req, res) => {
   const type = req.query.type;
   let movie;
   try {
-    if (type === "movies") {
+    if (type === "movie") {
       movie = await Movie.aggregate([
         { $match: { isSeries: false } },
         { $sample: { size: 1 } },
