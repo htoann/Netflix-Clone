@@ -6,7 +6,7 @@ import {
 } from "@material-ui/icons";
 import React, { useEffect, useState } from "react";
 import "./listItem.scss";
-import axios from "axios";
+import { axiosInstance } from "../../assets/js/axiosInstance";
 import { configHeaderToken } from "../../assets/js/configHeaderToken";
 import { Link } from "react-router-dom";
 import { capitalizeFirstLetter } from "./../../assets/js/capitalizeFirstLetter";
@@ -18,7 +18,10 @@ function ListItem({ item }) {
   useEffect(() => {
     const getMovie = async () => {
       try {
-        const res = await axios.get("movies/find/" + item, configHeaderToken);
+        const res = await axiosInstance.get(
+          "movies/find/" + item,
+          configHeaderToken
+        );
         setMovie(res.data);
       } catch (err) {
         console.log(err);

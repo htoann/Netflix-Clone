@@ -1,10 +1,10 @@
 import { InfoOutlined, PlayArrowRounded } from "@material-ui/icons";
 import React, { useEffect, useState } from "react";
 import "./featured.scss";
-import axios from "axios";
 import { Link } from "react-router-dom";
 import { configHeaderToken } from "./../../assets/js/configHeaderToken";
 import { capitalizeFirstLetter } from "./../../assets/js/capitalizeFirstLetter";
+import { axiosInstance } from "../../assets/js/axiosInstance";
 
 function Featured({ type, setGenre }) {
   const [content, setContent] = useState({});
@@ -12,7 +12,7 @@ function Featured({ type, setGenre }) {
   useEffect(() => {
     const getRandomContent = async () => {
       try {
-        const res = await axios.get(
+        const res = await axiosInstance.get(
           `movies/random${type ? "?type=" + type : ""}`,
           configHeaderToken
         );

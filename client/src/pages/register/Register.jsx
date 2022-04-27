@@ -1,6 +1,6 @@
 import React, { useContext, useRef, useState } from "react";
 import "./register.scss";
-import axios from "axios";
+import { axiosInstance } from "../../assets/js/axiosInstance";
 import { Link } from "react-router-dom";
 import { login } from "./../../authContext/apiCalls";
 import { AuthContext } from "./../../authContext/AuthContext";
@@ -23,7 +23,7 @@ function Register() {
   const handleFinish = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("auth/register", {
+      await axiosInstance.post("auth/register", {
         email,
         username,
         password,

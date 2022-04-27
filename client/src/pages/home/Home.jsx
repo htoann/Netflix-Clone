@@ -3,7 +3,7 @@ import Featured from "../../components/featured/Featured";
 import List from "../../components/list/List";
 import Navbar from "../../components/navbar/Navbar";
 import "./home.scss";
-import axios from "axios";
+import { axiosInstance } from "../../assets/js/axiosInstance";
 import Footer from "../../components/footer/Footer";
 import { configHeaderToken } from "../../assets/js/configHeaderToken";
 
@@ -14,7 +14,7 @@ const Home = ({ type }) => {
   useEffect(() => {
     const getRandomLists = async () => {
       try {
-        const result = await axios.get(
+        const result = await axiosInstance.get(
           `lists${type ? "?type=" + type : ""}${
             genre ? "&genre=" + genre : ""
           }`,
