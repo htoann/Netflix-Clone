@@ -53,15 +53,11 @@ router.delete("/:id", verify, async (req, res) => {
 
 // Get
 router.get("/find/:id", verify, async (req, res) => {
-  if (req.user.isAdmin) {
-    try {
-      const movie = await Movie.findById(req.params.id);
-      res.json(movie);
-    } catch (err) {
-      res.json(err);
-    }
-  } else {
-    res.json("You are not allowed!");
+  try {
+    const movie = await Movie.findById(req.params.id);
+    res.json(movie);
+  } catch (err) {
+    res.json(err);
   }
 });
 
@@ -91,15 +87,11 @@ router.get("/random", verify, async (req, res) => {
 
 // Get
 router.get("/", verify, async (req, res) => {
-  if (req.user.isAdmin) {
-    try {
-      const movies = await Movie.find();
-      res.json(movies.reverse());
-    } catch (err) {
-      res.json(err);
-    }
-  } else {
-    res.json("You are not allowed!");
+  try {
+    const movies = await Movie.find();
+    res.json(movies.reverse());
+  } catch (err) {
+    res.json(err);
   }
 });
 
