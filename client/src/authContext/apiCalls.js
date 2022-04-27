@@ -5,16 +5,14 @@ import {
   loginSuccess,
   logoutSuccess,
 } from "./AuthActions";
-import { toast } from "react-toastify";
 
-export const login = async (user, dispatch) => {
+export const login = async (user, dispatch, next) => {
   dispatch(loginStart());
   try {
     const res = await axiosInstance.post("auth/login", user);
     dispatch(loginSuccess(res.data));
   } catch (err) {
-    // dispatch(loginFailure());
-    toast.error(err);
+    dispatch(loginFailure());
   }
 };
 
