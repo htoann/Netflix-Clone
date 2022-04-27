@@ -1,4 +1,3 @@
-import axios from "axios";
 import { axiosInstance } from "../assets/js/axiosInstance";
 import {
   loginFailure,
