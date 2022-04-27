@@ -12,7 +12,6 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     await login({ email, password }, dispatch);
-
     window.location.href = "/";
   };
 
