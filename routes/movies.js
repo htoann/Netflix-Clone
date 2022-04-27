@@ -6,7 +6,6 @@ const verify = require("../verifyToken");
 router.post("/", verify, async (req, res) => {
   if (req.user.isAdmin) {
     const newMovie = new Movie(req.body);
-
     try {
       const savedMovie = await newMovie.save();
       res.json(savedMovie);
@@ -43,7 +42,6 @@ router.delete("/:id", verify, async (req, res) => {
   if (req.user.isAdmin) {
     try {
       await Movie.findByIdAndDelete(req.params.id);
-
       res.json("The movie has been deleted");
     } catch (err) {
       res.json(err);
@@ -58,7 +56,6 @@ router.get("/find/:id", verify, async (req, res) => {
   if (req.user.isAdmin) {
     try {
       const movie = await Movie.findById(req.params.id);
-
       res.json(movie);
     } catch (err) {
       res.json(err);
@@ -97,7 +94,6 @@ router.get("/", verify, async (req, res) => {
   if (req.user.isAdmin) {
     try {
       const movies = await Movie.find();
-
       res.json(movies.reverse());
     } catch (err) {
       res.json(err);
