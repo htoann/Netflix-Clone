@@ -1,0 +1,15 @@
+.home {
+  background-color: var(--main-color);
+  overflow: hidden;
+}
+
+.listContainerMid {
+  position: relative;
+  margin-top: -250px;
+}
+
+@media all and (max-width: 620px) {
+  .listContainerMid {
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,127 @@
+.navbar {
+  color: white;
+  font-size: 14px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(to top, transparent 0%, rgb(0, 0, 0, 0.3), 50%);
+  transition: 1s;
+  z-index: 999;
+
+  &.scrolled {
+    background-color: var(--main-color);
+    transition: 0.5s;
+  }
+
+  span {
+    padding-left: 24px;
+    cursor: pointer;
+  }
+
+  img {
+    cursor: pointer;
+  }
+
+  .left {
+    span {
+      transition: 0.2s;
+    }
+    span:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .right {
+    .search-box {
+      position: relative;
+      width: 250px;
+    }
+    .search-box .search-box__input {
+      outline: none;
+      background: rgba(0, 0, 0, 0.85);
+      border: solid 1px rgba(255, 255, 255, 0.85);
+      box-sizing: border-box;
+      padding: 7px 14px 7px 40px;
+      width: 0%;
+      font-size: 13px;
+      color: #fff;
+      opacity: 0;
+      transition: ease width 0.3s, ease opacity 0.3s;
+      float: right;
+    }
+    .search-box .search-box__icon {
+      position: absolute;
+      top: 7px;
+      color: white;
+      z-index: 10;
+      cursor: pointer;
+      right: 2px;
+      transition: ease transform 0.3s;
+      transition-delay: 0.25;
+    }
+    .search-box.active .search-box__icon {
+      transform: translateX(-214px);
+    }
+    .search-box.active .search-box__input {
+      opacity: 1;
+      width: 100%;
+    }
+  }
+
+  .profile {
+    .options {
+      display: none;
+      background-color: var(--main-color);
+      border: 1px solid rgb(68, 68, 68);
+    }
+
+    span {
+      padding: 15px;
+      cursor: pointer;
+      text-align: left;
+
+      &:last-child {
+        text-align: center;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .icon {
+      margin: 0 8px;
+    }
+
+    &:hover {
+      .options {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 40px;
+        min-width: 180px;
+
+        .profile-dropup {
+          color: white;
+          position: absolute;
+          top: -22px;
+          left: 60%;
+          font-size: 36px;
+        }
+      }
+    }
+  }
+}
+
+// Responsive
+
+@media all and (max-width: 1070px) {
+  .navbar {
+    .left {
+      a:not(:first-child) {
+        display: none !important;   
+      }
+    }
+  }
+}

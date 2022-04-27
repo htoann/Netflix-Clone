@@ -1,0 +1,36 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  .footerContainer {
+    color: grey;
+    min-height: 150px;
+    margin-top: 150px;
+
+    .social-links {
+      display: flex;
+
+      .social-link {
+        padding: 10px;
+        color: white;
+      }
+    }
+
+    .member-footer-links {
+      display: flex;
+
+      .member-footer-link-wrapper {
+        padding: 10px;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .member-footer-copyright {
+      margin-left: 10px;
+    }
+  }
+}
