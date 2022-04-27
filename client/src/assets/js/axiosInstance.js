@@ -1,5 +1,5 @@
 import { axios } from "axios";
 
-export const axiosIntance = axios.create({
+export const axiosInstance = axios.create({
   baseURL: "https://netflixtht.herokuapp.com/api/",
 });
