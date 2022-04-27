@@ -29,7 +29,7 @@ function Register() {
         password,
       });
 
-      login({ email, password }, dispatch);
+      await login({ email, password }, dispatch);
     } catch (err) {
       console.log(err);
     }
