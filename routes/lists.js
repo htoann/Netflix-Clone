@@ -8,7 +8,7 @@ router.post("/", verify, async (req, res) => {
     const newList = new List(req.body);
     try {
       const savedList = await newList.save();
-      return res.status(201).json(savedList);
+      res.status(201).json(savedList);
     } catch (err) {
       return res.status(500).json(err);
     }
@@ -52,7 +52,7 @@ router.get("/", verify, async (req, res) => {
     } else {
       list = await List.aggregate([{ $sample: { size: 10 } }]);
     }
-    return res.status(200).json(list);
+    res.status(200).json(list);
   } catch (err) {
     return res.status(403).json(err);
   }
@@ -69,7 +69,7 @@ router.put("/:id", verify, async (req, res) => {
         },
         { new: true }
       );
-      return res.status(200).json(updatedList);
+      res.status(200).json(updatedList);
     } catch (err) {
       return res.status(500).json(err);
     }
