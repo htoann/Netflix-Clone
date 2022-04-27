@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "mpm run watch:css && react-scripts start",
-    "build": "npm run watch:css && react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "watch:css": "postcss src/tailwind.css -o src/app.css"
