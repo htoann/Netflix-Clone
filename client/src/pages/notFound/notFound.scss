@@ -1,7 +1,8 @@
 .notFound {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-image: url("https://image.tmdb.org/t/p/original/iQFcwSGbZXMkeyKrxbPnwnRo5fl.jpg");
+  background-size: cover;
 
   .wrapper {
     padding: 25px 50px;

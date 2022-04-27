@@ -109,6 +109,16 @@ function Footer() {
                 <span className="member-footer-link-content">Help Center</span>
               </a>
             </li>
+            <li className="member-footer-link-wrapper">
+              <a
+                className="member-footer-link"
+                href="https://help.netflix.com/"
+              >
+                <span className="member-footer-link-content">
+                  Author : Tran Huu Toan
+                </span>
+              </a>
+            </li>
           </ul>
 
           <div className="member-footer-copyright">
