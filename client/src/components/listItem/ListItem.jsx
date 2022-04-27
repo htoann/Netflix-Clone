@@ -30,8 +30,6 @@ function ListItem({ item }) {
     getMovie();
   }, [item]);
 
-  console.log(isClicked);
-
   return (
     <div>
       <div className="listItem" onClick={() => setIsClicked(!isClicked)}>
