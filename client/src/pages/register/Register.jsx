@@ -29,7 +29,8 @@ function Register() {
         password,
       });
 
-      await login({ email, password }, dispatch);
+      login({ email, password }, dispatch);
+      window.location.href = "/";
     } catch (err) {
       console.log(err);
     }
