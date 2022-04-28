@@ -8,12 +8,12 @@ router.post("/", verify, async (req, res) => {
     const newMovie = new Movie(req.body);
     try {
       const savedMovie = await newMovie.save();
-      res.json(savedMovie);
+      res.status(201).json(savedMovie);
     } catch (err) {
-      return res.json(err);
+      res.status(500).json(err);
     }
   } else {
-    res.json("You are not allowed!");
+    res.status(403).json("You are not allowed!");
   }
 });
 
@@ -30,10 +30,10 @@ router.put("/:id", verify, async (req, res) => {
       );
       res.status(200).json(updatedMovie);
     } catch (err) {
-      return res.status(500).json(err);
+      res.status(500).json(err);
     }
   } else {
-    return res.status(403).json("You are not allowed!");
+    res.status(403).json("You are not allowed!");
   }
 });
 
@@ -42,12 +42,12 @@ router.delete("/:id", verify, async (req, res) => {
   if (req.user.isAdmin) {
     try {
       await Movie.findByIdAndDelete(req.params.id);
-      res.json("The movie has been deleted");
+      res.status(200).json("The movie has been deleted...");
     } catch (err) {
-      res.json(err);
+      res.status(500).json(err);
     }
   } else {
-    return res.json("You are not allowed!");
+    res.status(403).json("You are not allowed!");
   }
 });
 
@@ -55,9 +55,9 @@ router.delete("/:id", verify, async (req, res) => {
 router.get("/find/:id", verify, async (req, res) => {
   try {
     const movie = await Movie.findById(req.params.id);
-    res.json(movie);
+    res.status(200).json(movie);
   } catch (err) {
-    return res.json(err);
+    res.status(500).json(err);
   }
 });
 
@@ -89,9 +89,9 @@ router.get("/random", verify, async (req, res) => {
 router.get("/", verify, async (req, res) => {
   try {
     const movies = await Movie.find();
-    res.json(movies.reverse());
+    res.status(200).json(movies.reverse());
   } catch (err) {
-    return res.json(err);
+    res.status(500).json(err);
   }
 });
 

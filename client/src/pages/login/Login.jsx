@@ -3,6 +3,7 @@ import "./login.scss";
 import { login } from "./../../authContext/apiCalls";
 import { AuthContext } from "./../../authContext/AuthContext";
 import { Link } from "react-router-dom";
+import { emailValidation } from "../../assets/js/emailValidation";
 
 function Login() {
   const [email, setEmail] = useState();
@@ -11,8 +12,10 @@ function Login() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    await login({ email, password }, dispatch);
-    window.location.href = "/";
+    if (emailValidation(email)) {
+      await login({ email, password }, dispatch);
+      window.location.href = "/";
+    }
   };
 
   return (

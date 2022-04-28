@@ -5,17 +5,17 @@ import { Link } from "react-router-dom";
 import { login } from "./../../authContext/apiCalls";
 import { AuthContext } from "./../../authContext/AuthContext";
 import { emailValidation } from "./../../assets/js/emailValidation";
+import { toast } from "react-toastify";
 
 function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
   const { dispatch } = useContext(AuthContext);
-
   const emailRef = useRef();
 
   const handleStart = (e) => {
-    if (emailValidation(emailRef)) {
+    if (emailValidation(emailRef.current.value)) {
       setEmail(emailRef.current.value);
     }
   };
@@ -29,10 +29,10 @@ function Register() {
         password,
       });
 
-      login({ email, password }, dispatch);
+      await login({ email, password }, dispatch);
       window.location.href = "/";
     } catch (err) {
-      console.log(err);
+      toast.error(err.response.data);
     }
   };
 
@@ -70,13 +70,11 @@ function Register() {
               <input
                 type="username"
                 placeholder="Username"
-                // ref={usernameRef}
                 onChange={(e) => setUsername(e.target.value)}
               />
               <input
                 type="password"
                 placeholder="Password"
-                // ref={passwordRef}
                 onChange={(e) => setPassword(e.target.value)}
               />
               <button onClick={handleFinish}>Start</button>
