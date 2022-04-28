@@ -1,6 +1,8 @@
 import axios from "axios";
 
 export const axiosInstance = axios.create({
-  baseURL: "https://netflixtht.herokuapp.com/api/",
-  // baseURL: "http://localhost:8800/api/",
+  baseURL:
+    process.env.NODE_ENV !== "production"
+      ? "http://localhost:8800/api/"
+      : "https://netflixtht.herokuapp.com/api/",
 });

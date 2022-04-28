@@ -22,7 +22,10 @@ function Featured({ type, setGenre }) {
       }
     };
     getRandomContent();
-  }, [type]);
+    return () => {
+      setContent({});
+    };
+  }, [type, setGenre]);
 
   return (
     <div className="featured">
