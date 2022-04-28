@@ -10,9 +10,11 @@ import { configHeaderToken } from "../../assets/js/configHeaderToken";
 const Home = ({ type }) => {
   const [lists, setLists] = useState([]);
   const [genre, setGenre] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const getRandomLists = async () => {
+      setIsLoading(true);
       try {
         const result = await axiosInstance.get(
           `lists${type ? "?type=" + type : ""}${
@@ -21,6 +23,7 @@ const Home = ({ type }) => {
           configHeaderToken
         );
         setLists(result.data);
+        setIsLoading(false);
       } catch (err) {
         console.log(err);
       }
@@ -31,12 +34,18 @@ const Home = ({ type }) => {
   return (
     <div className="home">
       <Navbar />
-      <Featured type={type} setGenre={setGenre} />
-      <div className="listContainerMid">
-        {lists.map((list, key) => (
-          <List list={list} key={key} />
-        ))}
-      </div>
+      {isLoading ? (
+        <div>Loading</div>
+      ) : (
+        <>
+          <Featured type={type} setGenre={setGenre} />
+          <div className="listContainerMid">
+            {lists.map((list, key) => (
+              <List list={list} key={key} />
+            ))}
+          </div>
+        </>
+      )}
       <Footer />
     </div>
   );

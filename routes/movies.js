@@ -81,7 +81,7 @@ router.get("/random", verify, async (req, res) => {
     }
     res.status(200).json(movie);
   } catch (err) {
-    return res.status(500).json(err);
+    res.status(500);
   }
 });
 

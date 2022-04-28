@@ -54,7 +54,7 @@ router.get("/", verify, async (req, res) => {
     }
     res.status(200).json(list);
   } catch (err) {
-    return res.status(403).json(err);
+    return res.status(403);
   }
 });
 
