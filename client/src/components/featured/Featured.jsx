@@ -22,9 +22,9 @@ function Featured({ type, setGenre }) {
       }
     };
     getRandomContent();
-    return () => {
-      setContent({});
-    };
+    // return () => {
+    //   setContent({});
+    // };
   }, [type, setGenre]);
 
   return (
@@ -61,12 +61,12 @@ function Featured({ type, setGenre }) {
         <div className="title">{content.title}</div>
         <div className="desc">{content.desc}</div>
         <div className="buttons">
-          <button className="play">
-            <PlayArrowRounded className="icon" />
-            <Link to={{ pathname: "/watch" }} state={{ movie: content }}>
+          <Link to={{ pathname: "/watch" }} state={{ movie: content }}>
+            <button className="play">
+              <PlayArrowRounded className="icon" />
               <span>Play</span>
-            </Link>
-          </button>
+            </button>
+          </Link>
           <button className="more">
             <InfoOutlined className="icon" />
             <span>More Info</span>
