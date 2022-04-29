@@ -34,9 +34,6 @@ const Home = ({ type }) => {
     getRandomLists();
   }, [type, genre]);
 
-  console.log(type);
-  console.log(genre);
-
   return (
     <div className="home">
       <Navbar />
