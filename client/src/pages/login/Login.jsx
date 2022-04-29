@@ -14,7 +14,6 @@ function Login() {
     e.preventDefault();
     if (emailValidation(email)) {
       await login({ email, password }, dispatch);
-      window.location.href = "/";
     }
   };
 
