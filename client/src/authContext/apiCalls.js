@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 
 export const login = async (user, dispatch) => {
   dispatch(loginStart());
-  toast.info("Logging...");
+  toast.info("Logging...", { autoClose: 1000 });
   try {
     const res = await axiosInstance.post("auth/login", user);
     dispatch(loginSuccess(res.data));
