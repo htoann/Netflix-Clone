@@ -22,9 +22,6 @@ function Featured({ type, setGenre }) {
       }
     };
     getRandomContent();
-    return () => {
-      setContent({});
-    };
   }, [type]);
 
   return (
@@ -37,7 +34,7 @@ function Featured({ type, setGenre }) {
             id="genre"
             onChange={(e) => setGenre(e.target.value)}
           >
-            <option>Genres</option>
+            <option value="">Genres</option>
             <option value="adventure">Adventure</option>
             <option value="action">Action</option>
             <option value="comedy">Comedy</option>

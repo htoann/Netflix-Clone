@@ -15,6 +15,9 @@ const Home = ({ type }) => {
   useEffect(() => {
     const getRandomLists = async () => {
       setIsLoading(true);
+      if (genre) {
+        setIsLoading(false);
+      }
       try {
         const result = await axiosInstance.get(
           `lists${type ? "?type=" + type : ""}${
@@ -22,22 +25,24 @@ const Home = ({ type }) => {
           }`,
           configHeaderToken
         );
-        setIsLoading(false);
         setLists(result.data);
+        setIsLoading(false);
       } catch (err) {
         console.log(err);
       }
     };
     getRandomLists();
-    return () => {
-      setLists([]);
-    };
   }, [type, genre]);
+
+  console.log(type);
+  console.log(genre);
 
   return (
     <div className="home">
       <Navbar />
-      {!isLoading ? (
+      {isLoading ? (
+        <div className="loading">Loading...</div>
+      ) : (
         <>
           <Featured type={type} setGenre={setGenre} />
           <div className="listContainerMid">
@@ -45,10 +50,10 @@ const Home = ({ type }) => {
               <List list={list} key={key} />
             ))}
           </div>
-          <Footer />
+          <div className={lists.length === 0 ? "lists_null" : ""}>
+            <Footer />
+          </div>
         </>
-      ) : (
-        <div className="loading">Loading...</div>
       )}
     </div>
   );

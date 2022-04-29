@@ -28,9 +28,6 @@ function ListItem({ item }) {
       }
     };
     getMovie();
-    return () => {
-      setMovie({});
-    };
   }, [item]);
 
   return (
