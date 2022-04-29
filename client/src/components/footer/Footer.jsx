@@ -70,18 +70,6 @@ function Footer() {
                 ></path>
               </svg>
             </a>
-            <a
-              className="social-link"
-              href="https://github.com/htoann"
-              aria-label="github"
-            >
-              <img
-                width="28"
-                height="24"
-                src="https://img.icons8.com/fluency/344/github.png"
-                alt=""
-              />
-            </a>
           </div>
           <ul className="member-footer-links">
             <li className="member-footer-link-wrapper">
@@ -117,6 +105,14 @@ function Footer() {
                 <span className="member-footer-link-content">
                   Author : Tran Huu Toan
                 </span>
+              </a>
+            </li>
+            <li className="member-footer-link-wrapper">
+              <a
+                className="member-footer-link"
+                href="https://github.com/htoann"
+              >
+                <span className="member-footer-link-content">Github</span>
               </a>
             </li>
           </ul>
