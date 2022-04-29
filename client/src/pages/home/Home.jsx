@@ -22,21 +22,22 @@ const Home = ({ type }) => {
           }`,
           configHeaderToken
         );
-        setLists(result.data);
         setIsLoading(false);
+        setLists(result.data);
       } catch (err) {
         console.log(err);
       }
     };
     getRandomLists();
+    return () => {
+      setLists([]);
+    };
   }, [type, genre]);
 
   return (
     <div className="home">
       <Navbar />
-      {isLoading ? (
-        <div>Loading</div>
-      ) : (
+      {!isLoading ? (
         <>
           <Featured type={type} setGenre={setGenre} />
           <div className="listContainerMid">
@@ -44,9 +45,11 @@ const Home = ({ type }) => {
               <List list={list} key={key} />
             ))}
           </div>
+          <Footer />
         </>
+      ) : (
+        <div className="loading">Loading...</div>
       )}
-      <Footer />
     </div>
   );
 };

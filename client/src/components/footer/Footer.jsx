@@ -122,7 +122,7 @@ function Footer() {
           </ul>
 
           <div className="member-footer-copyright">
-            <span>© 1997-2022 Netflix, Inc.‎</span>
+            <span>© 1997 - 2022 Netflix, Inc.‎</span>
           </div>
         </div>
       </div>
