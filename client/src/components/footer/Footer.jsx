@@ -103,7 +103,7 @@ function Footer() {
                 href="https://www.facebook.com/htoann/"
               >
                 <span className="member-footer-link-content">
-                  Author : Tran Huu Toan
+                  Author Tran Huu Toan
                 </span>
               </a>
             </li>

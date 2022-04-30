@@ -18,6 +18,10 @@ const Home = ({ type }) => {
       if (genre) {
         setIsLoading(false);
       }
+      if (!type) {
+        setGenre(null);
+        setIsLoading(true);
+      }
       try {
         const result = await axiosInstance.get(
           `lists${type ? "?type=" + type : ""}${
