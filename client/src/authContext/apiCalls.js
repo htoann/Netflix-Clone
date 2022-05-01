@@ -1,4 +1,3 @@
-import { axiosInstance } from "../assets/js/axiosInstance";
 import {
   loginFailure,
   loginStart,
@@ -6,6 +5,7 @@ import {
   logoutSuccess,
 } from "./AuthActions";
 import { toast } from "react-toastify";
+import { axiosInstance } from "./../utils/axiosInstance";
 
 export const login = async (user, dispatch) => {
   dispatch(loginStart());

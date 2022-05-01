@@ -6,10 +6,9 @@ import {
 } from "@material-ui/icons";
 import React, { useEffect, useState } from "react";
 import "./listItem.scss";
-import { axiosInstance } from "../../assets/js/axiosInstance";
-import { configHeaderToken } from "../../assets/js/configHeaderToken";
 import { Link } from "react-router-dom";
-import { capitalizeFirstLetter } from "./../../assets/js/capitalizeFirstLetter";
+import { axiosInstance } from "../../utils/axiosInstance";
+import { capitalizeFirstLetter } from "./../../utils/capitalizeFirstLetter";
 
 function ListItem({ item }) {
   const [isClicked, setIsClicked] = useState(false);
@@ -18,10 +17,7 @@ function ListItem({ item }) {
   useEffect(() => {
     const getMovie = async () => {
       try {
-        const res = await axiosInstance.get(
-          "movies/find/" + item,
-          configHeaderToken
-        );
+        const res = await axiosInstance.get("movies/find/" + item);
         setMovie(res.data);
       } catch (err) {
         console.log(err);

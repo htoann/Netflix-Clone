@@ -1,11 +1,11 @@
 import React, { useContext, useRef, useState } from "react";
 import "./register.scss";
-import { axiosInstance } from "../../assets/js/axiosInstance";
 import { Link } from "react-router-dom";
 import { login } from "./../../authContext/apiCalls";
 import { AuthContext } from "./../../authContext/AuthContext";
-import { emailValidation } from "./../../assets/js/emailValidation";
 import { toast } from "react-toastify";
+import { emailValidation } from "../../utils/emailValidation";
+import { axiosInstance } from "../../utils/axiosInstance";
 
 function Register() {
   const [email, setEmail] = useState("");
@@ -28,7 +28,6 @@ function Register() {
         username,
         password,
       });
-
       await login({ email, password }, dispatch);
       window.location.href = "/";
     } catch (err) {

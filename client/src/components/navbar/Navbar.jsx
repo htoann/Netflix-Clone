@@ -25,7 +25,7 @@ const Navbar = () => {
     return () => (window.onscroll = null);
   });
 
-  const handleLogout = (e) => {
+  const handleLogout = () => {
     logout(dispatch);
   };
 

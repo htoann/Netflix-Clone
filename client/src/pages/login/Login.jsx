@@ -3,7 +3,7 @@ import "./login.scss";
 import { login } from "./../../authContext/apiCalls";
 import { AuthContext } from "./../../authContext/AuthContext";
 import { Link } from "react-router-dom";
-import { emailValidation } from "../../assets/js/emailValidation";
+import { emailValidation } from "./../../utils/emailValidation";
 
 function Login() {
   const [email, setEmail] = useState();
