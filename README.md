@@ -48,4 +48,4 @@ Or here is the [Live Example](https://netflixtht.herokuapp.com)
 
 - Netflix
 
-> If it has bugs, please let me know
+> If this app has bugs, please let me know
