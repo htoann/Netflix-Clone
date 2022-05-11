@@ -3,35 +3,6 @@ const User = require("../model/User");
 const CryptoJS = require("crypto-js");
 const jwt = require("jsonwebtoken");
 
-// Register
-router.post("/register", async (req, res) => {
-  const newUser = new User({
-    username: req.body.username,
-    email: req.body.email,
-    password: CryptoJS.AES.encrypt(
-      req.body.password,
-      process.env.SECRET_KEY
-    ).toString(),
-  });
-
-  let user = await User.findOne({ email: newUser.email });
-  if (!user) {
-    user = await User.findOne({ username: newUser.username });
-    if (!user) {
-      try {
-        const user = await newUser.save();
-        res.status(201).json(user);
-      } catch (err) {
-        res.status(500).json(err);
-      }
-    } else {
-      return res.status(422).json("Username is already registered");
-    }
-  } else {
-    return res.status(422).json("Email is already registered");
-  }
-});
-
 // Login
 router.post("/login", async (req, res, next) => {
   try {
