@@ -86,13 +86,16 @@ const Navbar = () => {
               </span>
               <hr />
               <span>
-                <AccountCircleOutlined className="icon" />
-                Account
+                <a href="https://netflixadm.herokuapp.com/">
+                  <AccountCircleOutlined className="icon" />
+                  Netflix Admin
+                </a>
               </span>
               <span>
                 <HelpOutlineOutlined className="icon" />
                 Help Center
               </span>
+
               <hr />
               <span onClick={handleLogout}>Sign out of Netflix</span>
             </div>
