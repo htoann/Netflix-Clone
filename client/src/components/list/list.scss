@@ -118,4 +118,10 @@ div.swiper-button-next {
     }
   }
 }
-
+@include w750 {
+  .list {
+    .listTitle {
+      font-size: 15px;
+    }
+  }
+}
