@@ -51,3 +51,5 @@ Or here is the [Live Example](https://netflixtht.herokuapp.com)
 > If this app has bugs, please let me know
 
 > Don't read my css. It's not good and can make you laugh
+
+> The product is still under development
