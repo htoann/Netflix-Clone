@@ -1,6 +1,6 @@
 # Netflix
 
-A netflix clone website built with React and Node
+A netflix clone website built with MERN Stack (MongoDB, Express, React, Node)
 
 ## Table of contents
 
@@ -11,14 +11,23 @@ A netflix clone website built with React and Node
 
 ## Technologies
 
-- [React](https://github.com/facebook/react), [Node](https://github.com/nodejs/node), [Tailwind](https://github.com/tailwindlabs/tailwindcss), [MongoDB](https://www.mongodb.com/)
-- Libraries: [Swiper](https://github.com/nolimits4web/swiper)
+- [React](https://github.com/facebook/react)
+- [Node](https://github.com/nodejs/node)
+- [Tailwind](https://github.com/tailwindlabs/tailwindcss)
+- [MongoDB](https://www.mongodb.com/)
+- [Swiper](https://github.com/nolimits4web/swiper)
 
 ## Setup
 
 To run this project, install it locally using npm (or yarn):
 
 ```
+npm
+npm run dev
+```
+
+```
+cd client
 npm
 npm start
 ```
