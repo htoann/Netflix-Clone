@@ -1,11 +1,9 @@
 import React, { useContext, useRef, useState } from "react";
 import "./register.scss";
 import { Link } from "react-router-dom";
-import { login } from "./../../authContext/apiCalls";
 import { AuthContext } from "./../../authContext/AuthContext";
-import { toast } from "react-toastify";
 import { emailValidation } from "../../utils/emailValidation";
-import { axiosInstance } from "../../utils/axiosInstance";
+import { register } from "../../utils/getApi";
 
 function Register() {
   const [email, setEmail] = useState("");
@@ -20,19 +18,9 @@ function Register() {
     }
   };
 
-  const handleFinish = async (e) => {
+  const handleFinish = (e) => {
     e.preventDefault();
-    try {
-      await axiosInstance.post("auth/register", {
-        email,
-        username,
-        password,
-      });
-      await login({ email, password }, dispatch);
-      window.location.href = "/";
-    } catch (err) {
-      toast.error(err.response.data);
-    }
+    register(email, username, password, dispatch);
   };
 
   return (

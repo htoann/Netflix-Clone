@@ -1,3 +1,5 @@
+@import "./mixin.scss";
+
 @tailwind base;
 
 @tailwind components;

@@ -1,3 +1,5 @@
+@import "../../mixin.scss";
+
 .list {
   margin-bottom: 60px;
 
@@ -5,7 +7,6 @@
     color: white;
     font-weight: 500;
     font-size: 28px;
-    margin-left: 50px;
   }
 
   .wrapper {
@@ -13,7 +14,6 @@
     margin-bottom: 60px;
 
     .listContainer {
-      margin-left: 50px;
       display: flex;
       width: max-content;
       transition: all 1s ease;
@@ -31,9 +31,9 @@
 .swiper-button-next,
 .swiper-button-prev {
   position: absolute;
-  top: 32px !important;
+  top: 36px !important;
   width: 50px !important ;
-  height: 160px !important;
+  height: 162px !important;
   z-index: 10;
   cursor: pointer;
   display: flex;
@@ -86,7 +86,6 @@ div.swiper-button-next {
 .swiper-slide {
   transition: all 450ms !important;
   max-width: 292px !important;
-  // height: 400px;
 }
 
 .swiper-wrapper:hover .swiper-slide {
@@ -109,3 +108,14 @@ div.swiper-button-next {
     transform: scale(1.2) translate(-20px, 0px) !important;
   }
 }
+
+@include w1400 {
+  .list {
+    margin-bottom: 20px !important;
+
+    .listTitle {
+      font-size: 20px;
+    }
+  }
+}
+

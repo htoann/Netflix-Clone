@@ -1,13 +1,13 @@
+@import "../../mixin.scss";
+
 .footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  padding: 20px 40px;
 
   .footerContainer {
     color: grey;
-    min-height: 150px;
-    margin-top: 150px;
 
     .social-links {
       display: flex;
@@ -32,5 +32,14 @@
     .member-footer-copyright {
       margin-left: 10px;
     }
+  }
+}
+
+@include w750 {
+  .member-footer-link-wrapper {
+    display: none !important;
+  }
+  .social-links {
+    margin-bottom: 20px !important;
   }
 }

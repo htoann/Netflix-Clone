@@ -1,25 +1,15 @@
+import "./featured.scss";
 import { InfoOutlined, PlayArrowRounded } from "@material-ui/icons";
 import React, { useEffect, useState } from "react";
-import "./featured.scss";
 import { Link } from "react-router-dom";
-import { axiosInstance } from "../../utils/axiosInstance";
 import { capitalizeFirstLetter } from "./../../utils/capitalizeFirstLetter";
+import { getRandomMovieApi } from "../../utils/getApi";
 
 function Featured({ type, setGenre }) {
   const [content, setContent] = useState({});
 
   useEffect(() => {
-    const getRandomContent = async () => {
-      try {
-        const res = await axiosInstance.get(
-          `movies/random${type ? "?type=" + type : ""}`
-        );
-        setContent(res.data[0]);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    getRandomContent();
+    getRandomMovieApi(type, setContent);
   }, [type]);
 
   return (
@@ -51,7 +41,12 @@ function Featured({ type, setGenre }) {
         </div>
       )}
       <div className="linear"></div>
-      <img width="100%" src={content.img} alt="" />
+      {content ? (
+        <img width="100%" src={content.img} alt="" />
+      ) : (
+        <div className="loading">Loading...</div>
+      )}
+
       <div className="info">
         <div className="title">{content.title}</div>
         <div className="desc">{content.desc}</div>

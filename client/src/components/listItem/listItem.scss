@@ -1,3 +1,5 @@
+@import "../../mixin.scss";
+
 .listItem {
   max-width: 288px;
   height: 160px;
@@ -67,11 +69,41 @@
   }
 }
 
-.swiper-wrapper {
-  margin-top: 2px;
-  margin-left: 50px;
-}
-
 .none {
   display: none;
+}
+
+@include w1400 {
+  .itemInfo {
+    font-size: 10px;
+
+    .listItem__active_title {
+      font-size: 15px !important;
+    }
+
+    .match,
+    .limit,
+    .like,
+    .dislike,
+    .isSeries {
+      display: none !important;
+    }
+
+    .icon {
+      margin: 8px;
+
+      &:hover {
+        color: rgb(230, 230, 230);
+      }
+    }
+
+    span {
+      margin-left: 10px;
+      font-weight: 400;
+    }
+
+    .itemInfoBottom {
+      margin-top: 5px;
+    }
+  }
 }

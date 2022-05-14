@@ -1,3 +1,5 @@
+@import "../../mixin.scss";
+
 .featured {
   position: relative;
 
@@ -24,9 +26,9 @@
 
   .category {
     position: absolute;
-    top: 80px;
-    left: 55px;
-    font-size: 35px;
+    padding: 30px 55px;
+    margin-top: 50px;
+    font-size: 25px;
     font-weight: 500;
     color: white;
     display: flex;
@@ -52,8 +54,8 @@
   .info {
     width: 35%;
     position: absolute;
-    left: 55px;
-    top: 350px;
+    margin-left: 55px;
+    margin-top: -700px;
 
     .desc {
       margin: 30px 0;
@@ -129,7 +131,7 @@
 
 // Responsive
 
-@media all and (max-width: 1615px) {
+@include w1515 {
   .desc {
     display: none !important;
   }
@@ -137,21 +139,51 @@
   .buttons {
     margin-top: 20px;
   }
-}
 
-@media all and (max-width: 1350px) {
   .info {
-    margin-top: -100px;
+    margin-top: -500px !important;
+
+    .title {
+      font-size: 22px !important;
+    }
+
+    .buttons {
+      font-size: 15px;
+      .play,
+      .more {
+        padding: 0 12px !important;
+      }
+    }
   }
 }
 
-@media all and (max-width: 1160px) {
+@include w1100 {
   .info {
-    margin-top: -200px;
+    margin-top: -380px !important;
+    margin-left: 20px !important;
   }
 }
 
-@media all and (max-width: 1060px) {
+@include w830 {
+  .info {
+    margin-top: -340px !important;
+    .title {
+      display: none !important;
+    }
+
+    .more {
+      display: none !important;
+    }
+  }
+}
+
+@include w750 {
+  .info {
+    margin-top: -280px !important;
+  }
+}
+
+@include w615 {
   .info {
     display: none !important;
   }

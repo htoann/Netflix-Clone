@@ -4,7 +4,7 @@ import List from "../../components/list/List";
 import Navbar from "../../components/navbar/Navbar";
 import "./home.scss";
 import Footer from "../../components/footer/Footer";
-import { axiosInstance } from "../../utils/axiosInstance";
+import { getRandomLists } from "../../utils/getApi";
 
 const Home = ({ type }) => {
   const [lists, setLists] = useState([]);
@@ -12,26 +12,7 @@ const Home = ({ type }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    const getRandomLists = async () => {
-      setIsLoading(true);
-      if (genre) {
-        setIsLoading(false);
-      }
-      if (!type) {
-        setGenre(null);
-        setIsLoading(true);
-      }
-      try {
-        const result = await axiosInstance.get(
-          `lists${type ? "?type=" + type : ""}${genre ? "&genre=" + genre : ""}`
-        );
-        setLists(result.data);
-        setIsLoading(false);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    getRandomLists();
+    getRandomLists(genre, setGenre, setLists, type, setIsLoading);
   }, [type, genre]);
 
   return (

@@ -39,7 +39,7 @@ function List({ list }) {
             slidesPerGroup: 3,
           },
         }}
-        spaceBetween={6}
+        spaceBetween={8}
         preventClicksPropagation={true}
         preventClicks={true}
         scrollbar={{ draggable: false, hide: true }}

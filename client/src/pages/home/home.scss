@@ -1,3 +1,5 @@
+@import "../../mixin.scss";
+
 .home {
   background-color: var(--main-color);
   overflow: hidden;
@@ -5,13 +7,8 @@
 
 .listContainerMid {
   position: relative;
-  margin-top: -250px;
-}
-
-@media all and (max-width: 620px) {
-  .listContainerMid {
-    margin-top: 0;
-  }
+  padding: 0 50px;
+  margin-top: -280px;
 }
 
 .loading {
@@ -26,4 +23,17 @@
 
 .lists_null {
   margin-top: 150px;
+}
+
+@include w1100 {
+  .listContainerMid {
+    padding: 0 20px !important;
+    margin-top: -200px !important;
+  }
+}
+
+@include w750 {
+  .listContainerMid {
+    margin-top: -100px !important;
+  }
 }

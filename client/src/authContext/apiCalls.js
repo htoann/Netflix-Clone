@@ -19,10 +19,6 @@ export const login = async (user, dispatch) => {
   }
 };
 
-export const logout = async (dispatch) => {
-  try {
-    dispatch(logoutSuccess());
-  } catch (err) {
-    console.log(err);
-  }
+export const logout = (dispatch) => {
+  dispatch(logoutSuccess());
 };

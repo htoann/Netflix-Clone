@@ -7,23 +7,15 @@ import {
 import React, { useEffect, useState } from "react";
 import "./listItem.scss";
 import { Link } from "react-router-dom";
-import { axiosInstance } from "../../utils/axiosInstance";
 import { capitalizeFirstLetter } from "./../../utils/capitalizeFirstLetter";
+import { getMovieApi } from "../../utils/getApi";
 
 function ListItem({ item }) {
   const [isClicked, setIsClicked] = useState(false);
   const [movie, setMovie] = useState({});
 
   useEffect(() => {
-    const getMovie = async () => {
-      try {
-        const res = await axiosInstance.get("movies/find/" + item);
-        setMovie(res.data);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    getMovie();
+    getMovieApi(item, setMovie);
   }, [item]);
 
   return (
@@ -38,13 +30,15 @@ function ListItem({ item }) {
                 <PlayCircleFilledRounded className="icon" />
               </Link>
               <AddCircleOutlineRounded className="icon" />
-              <ThumbUpAltOutlined className="icon" />
-              <ThumbDownOutlined className="icon" />
+              <ThumbUpAltOutlined className="icon like" />
+              <ThumbDownOutlined className="icon dislike" />
             </div>
             <div className="itemInfoTop py-1">
-              <span className="text-green-500 text-xs">98% Match</span>
-              <span className="border p-1">{movie.limit}</span>
-              <span>{movie.isSeries ? "Series" : "Limited"}</span>
+              <span className="text-green-500 text-xs match">98% Match</span>
+              <span className="border p-1 limit">{movie.limit}</span>
+              <span className="isSeries">
+                {movie.isSeries ? "Series" : "Limited"}
+              </span>
             </div>
             <div className="itemInfoBottom pb-2">
               <span className="listItem__itemInfoBottom_genre">

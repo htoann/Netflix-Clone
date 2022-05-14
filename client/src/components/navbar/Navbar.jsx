@@ -31,9 +31,9 @@ const Navbar = () => {
 
   return (
     <div className={isScrolled ? "navbar scrolled" : "navbar"}>
-      <div className="flex justify-between px-14">
+      <div className="flex justify-between">
         <div className="left flex py-5 items-center">
-          <Link to="/">
+          <Link to="/" className="netflix">
             <img
               className="w-24 mr-4"
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png"
@@ -44,15 +44,15 @@ const Navbar = () => {
             <span>Home</span>
           </Link>
           <Link to="/series">
-            <span>TV Shows</span>
+            <span>TV</span>
           </Link>
           <Link to="/movies">
             <span>Movies</span>
           </Link>
-          <Link to="/popular">
+          <Link to="/popular" className="navbarNone">
             <span>New & Popular</span>
           </Link>
-          <Link to="/">
+          <Link to="/" className="navbarNone">
             <span>My List</span>
           </Link>
         </div>
@@ -66,7 +66,7 @@ const Navbar = () => {
               placeholder="Movies, TV shows"
             ></input>
           </div>
-          <span>Kids</span>
+          <span className="kids">Kids</span>
           <span>
             <NotificationsRounded />
           </span>
