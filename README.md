@@ -49,4 +49,5 @@ Or here is the [Live Example](https://netflixtht.herokuapp.com)
 - Netflix
 
 > If this app has bugs, please let me know
+
 > Don't read my css. It's not good and can make you laugh
