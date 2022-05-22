@@ -51,7 +51,9 @@ Here is some screenshots to show how the website would looks like.
 ![Watch-min](https://user-images.githubusercontent.com/32484104/166135215-d75edd06-a14b-4dbd-bc79-4ff15e34ec3e.PNG)
 
 
-Or here is the [Live Example](https://netflixtht.herokuapp.com)
+Or here is the [Live Example Version 1](https://netflixtht.herokuapp.com)
+
+[Version 2](https://netflixtht.herokuapp.com) with API from themoviedb.org
 
 ## Sources
 
