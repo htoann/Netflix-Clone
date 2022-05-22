@@ -76,10 +76,11 @@ export const getMoviesByType = async (genre, setGenre, type, setIsLoading) => {
   if (genre) {
     setIsLoading(false);
   }
-  if (!type) {
+  if (type) {
     setIsLoading(true);
     setGenre(null);
   }
+
   try {
     const res = await axiosMovie.get(
       `/list/${genre ? genre : type === "movie" ? 28 : 10759}`
