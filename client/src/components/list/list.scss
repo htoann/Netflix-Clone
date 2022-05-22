@@ -1,0 +1,127 @@
+@import "../../mixin.scss";
+
+.list {
+  margin-bottom: 60px;
+
+  .listTitle {
+    color: white;
+    font-weight: 500;
+    font-size: 28px;
+  }
+
+  .wrapper {
+    position: relative;
+    margin-bottom: 60px;
+
+    .listContainer {
+      display: flex;
+      width: max-content;
+      transition: all 1s ease;
+      height: 180px;
+    }
+  }
+}
+
+// Override swiper styles
+
+.swiper {
+  padding: 15px 0 !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  position: absolute;
+  top: 36px !important;
+  width: 50px !important ;
+  height: 162px !important;
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white !important;
+  background-color: rgba(20, 20, 20, 0.5);
+  right: 0px !important;
+  font-size: 2px;
+}
+
+.swiper-pagination {
+  top: -10px !important;
+  height: 1rem !important;
+  text-align: right !important;
+}
+
+.swiper-pagination-bullet {
+  background-color: rgb(255, 255, 255) !important;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  width: 97.5% !important;
+  height: 1px !important;
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets {
+  bottom: 0 !important;
+  left: 0 !important;
+}
+
+div.swiper-button-prev,
+div.swiper-button-next {
+  transition: all 450ms !important;
+  color: rgb(255, 255, 255);
+
+  &:hover {
+    transform: scale(1.2) !important;
+    transition: all 450ms !important;
+  }
+}
+
+.swiper-button-prev {
+  left: 0px !important;
+}
+
+// Slide
+
+.swiper-slide {
+  transition: all 450ms !important;
+  max-width: 292px !important;
+}
+
+.swiper-wrapper:hover .swiper-slide {
+  opacity: 0.8 !important;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+
+  &:hover {
+    transform: scale(1.2) !important;
+    opacity: 1 !important;
+    margin-right: 35px !important;
+  }
+
+  &:first-child:hover {
+    transform: scale(1.2) translate(25px, 0px) !important;
+    margin-right: 65px !important;
+  }
+
+  &:nth-child(6):hover {
+    transform: scale(1.2) translate(-20px, 0px) !important;
+  }
+}
+
+@include w1400 {
+  .list {
+    margin-bottom: 20px !important;
+
+    .listTitle {
+      font-size: 20px;
+    }
+  }
+}
+@include w750 {
+  .list {
+    .listTitle {
+      font-size: 15px;
+    }
+  }
+}

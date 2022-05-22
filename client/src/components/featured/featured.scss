@@ -1,0 +1,190 @@
+@import "../../mixin.scss";
+
+.featured {
+  position: relative;
+
+  .linear {
+    background: linear-gradient(
+      77deg,
+      rgba(0, 0, 0, 0.6) 0,
+      rgba(0, 0, 0, 0) 85%
+    );
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 26.09%;
+    bottom: 0;
+  }
+
+  img {
+    background-image: linear-gradient(
+      77deg,
+      rgba(0, 0, 0, 0.6) 25%,
+      transparent 85%
+    );
+  }
+
+  .category {
+    position: absolute;
+    padding: 30px 55px;
+    margin-top: 50px;
+    font-size: 25px;
+    font-weight: 500;
+    color: white;
+    display: flex;
+    align-items: center;
+    z-index: 9;
+
+    select {
+      font-size: 20px;
+      cursor: pointer;
+      background-color: var(--main-color);
+      border: 1px solid white;
+      margin-left: 30px;
+      padding: 5px;
+      font-weight: 500;
+    }
+  }
+
+  .video {
+    width: 100%;
+    height: 90%;
+  }
+
+  .info {
+    width: 35%;
+    position: absolute;
+    margin-left: 55px;
+    margin-top: -700px;
+
+    .desc {
+      margin: 30px 0;
+      color: white;
+      font-weight: 500;
+      font-size: 20px;
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 4; /* number of lines to show */
+      line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    .title {
+      font-weight: bold;
+      font-size: 30px;
+      color: white;
+    }
+  }
+
+  .buttons {
+    font-size: 20px;
+    display: flex;
+
+    svg {
+      font-size: 45px;
+      margin-right: 10px;
+      align-items: center;
+    }
+
+    button {
+      padding: 5px 25px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+
+      &.play {
+        background-color: white;
+      }
+
+      &.more {
+        color: white;
+        background-color: rgba(64, 64, 78, 0.7);
+        margin-left: 15px;
+      }
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      span {
+        font-weight: 600;
+      }
+    }
+  }
+
+  .fadeBottom {
+    position: absolute;
+    bottom: 0;
+    height: 10rem;
+    width: 100%;
+    background-image: linear-gradient(
+      180deg,
+      transparent,
+      rgba(15, 15, 15, 0.61),
+      #111,
+      #111
+    );
+  }
+}
+
+// Responsive
+
+@include w1515 {
+  .desc {
+    display: none !important;
+  }
+
+  .buttons {
+    margin-top: 20px;
+  }
+
+  .info {
+    margin-top: -500px !important;
+
+    .title {
+      font-size: 22px !important;
+    }
+
+    .buttons {
+      font-size: 15px;
+      .play,
+      .more {
+        padding: 0 12px !important;
+      }
+    }
+  }
+}
+
+@include w1100 {
+  .info {
+    margin-top: -380px !important;
+    margin-left: 20px !important;
+  }
+}
+
+@include w830 {
+  .info {
+    margin-top: -340px !important;
+    .title {
+      display: none !important;
+    }
+
+    .more {
+      display: none !important;
+    }
+  }
+}
+
+@include w750 {
+  .info {
+    margin-top: -200px !important;
+  }
+}
+
+@include w615 {
+  .info {
+    display: none !important;
+  }
+}

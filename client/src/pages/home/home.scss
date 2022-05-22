@@ -1,0 +1,47 @@
+@import "../../mixin.scss";
+
+.home {
+  background-color: var(--main-color);
+  overflow: hidden;
+}
+
+.listContainerMid {
+  position: relative;
+  padding: 0 50px;
+  margin-top: -280px;
+}
+
+.loading {
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lists_null {
+  margin-top: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 40px;
+  height: 114vh;
+  width: 100%;
+  background-color: var(--main-color);
+  padding-top: 900px;
+}
+
+@include w1100 {
+  .listContainerMid {
+    padding: 0 20px !important;
+    margin-top: -200px !important;
+  }
+}
+
+@include w750 {
+  .listContainerMid {
+    margin-top: -100px !important;
+  }
+}
