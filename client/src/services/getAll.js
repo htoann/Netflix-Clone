@@ -33,7 +33,7 @@ export const getAll = async (genre, setGenre, type, setIsLoading, setLists) => {
         await getLatestMovies,
         await getMostPopularMovies
       );
-    } else if (type === "series") {
+    } else if (type === "series" && genre == null) {
       allList.push(
         await getTrendingTV,
         await getPopularTV,
@@ -43,7 +43,7 @@ export const getAll = async (genre, setGenre, type, setIsLoading, setLists) => {
         await getTVOnTheAirToday,
         await getLatestTV
       );
-    } else if (type === "popular") {
+    } else if (type === "popular" && genre == null) {
       allList.push(
         await getPopularTV,
         await getMostPopularTV,
