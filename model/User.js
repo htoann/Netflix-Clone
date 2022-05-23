@@ -8,7 +8,7 @@ const UserSchema = new mongoose.Schema(
     avatar: {
       type: "String",
       default:
-        "https://occ-0-395-325.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAAFM5PrJX0TiFgfm4HOoS76PWmofnZtjwSQQj-dPSEdzfCr8p8wNhjBwMybzmLIAGotByD810aYhO6nG8N8FMUoXG-sg.png",
+        "https://ih1.redbubble.net/image.618405117.2432/flat,1000x1000,075,f.u2.jpg",
     },
     isAdmin: { type: "Boolean", default: false },
   },
