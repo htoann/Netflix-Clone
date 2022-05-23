@@ -4,8 +4,6 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const authRoute = require("./routes/auth");
 const userRoute = require("./routes/users");
-const movieRoute = require("./routes/movies");
-const listRoute = require("./routes/lists");
 const cors = require("cors");
 const path = require("path");
 const verify = require("./verifyToken");
@@ -28,8 +26,6 @@ app.use(cors(corsOptions)); // Use this after the variable declaration
 
 app.use("/api/auth", authRoute);
 app.use("/api/users", verify, userRoute);
-app.use("/api/movies", verify, movieRoute);
-app.use("/api/lists", verify, listRoute);
 
 // Deloy
 if (process.env.NODE_ENV === "production") {
