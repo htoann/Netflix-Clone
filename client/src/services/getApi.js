@@ -73,17 +73,27 @@ export const getByUrl = async (url, title, config) => {
 
 export const getMoviesByType = async (genre, setGenre, type, setIsLoading) => {
   setIsLoading(true);
-  if (genre) {
-    setIsLoading(false);
-  }
-  if (type) {
-    setIsLoading(true);
-    setGenre(null);
-  }
-
   try {
     const res = await axiosMovie.get(
-      `/list/${genre ? genre : type === "movie" ? 28 : 10759}`
+      // `/list/${genre ? genre : type === "movie" ? 28 : 10759}`
+      `/discover/movie?api_key=${
+        process.env.REACT_APP_API_KEY_MOVIE
+      }&with_genres=${genre ? genre : type === "movie" ? 28 : 10759}`
+    );
+    setIsLoading(false);
+    return res.data;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const getTVByType = async (genre, setGenre, type, setIsLoading) => {
+  setIsLoading(true);
+  try {
+    const res = await axiosMovie.get(
+      `/discover/tv?api_key=${
+        process.env.REACT_APP_API_KEY_MOVIE
+      }&with_genres=${genre ? genre : type === "movie" ? 28 : 10759}`
     );
     setIsLoading(false);
     return res.data;

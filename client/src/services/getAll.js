@@ -1,8 +1,7 @@
 import { shuffle } from "../utils";
-import { getMoviesByType } from "./getApi";
+import { getMoviesByType, getTVByType } from "./getApi";
 import {
   getLatestMovies,
-  getMostPopularMovies,
   getPopularMovies,
   getTopRatedMovies,
   getTrendingMovies,
@@ -10,7 +9,6 @@ import {
 } from "./getMovies";
 import {
   getLatestTV,
-  getMostPopularTV,
   getPopularTV,
   getTopRatedTV,
   getTrendingTV,
@@ -22,36 +20,38 @@ export const getAll = async (genre, setGenre, type, setIsLoading, setLists) => {
   let allList = [];
 
   if (type) {
-    allList.push(await getMoviesByType(genre, setGenre, type, setIsLoading));
+    type === "movie" &&
+      allList.push(await getMoviesByType(genre, setGenre, type, setIsLoading));
+
+    type === "series" &&
+      allList.push(await getTVByType(genre, setGenre, type, setIsLoading));
 
     if (type === "movie" && genre == null) {
+      setGenre(null);
+
       allList.push(
         await getTrendingMovies,
         await getUpcomingMovies,
         await getPopularMovies,
         await getTopRatedMovies,
-        await getLatestMovies,
-        await getMostPopularMovies
+        await getLatestMovies
       );
     } else if (type === "series" && genre == null) {
       allList.push(
         await getTrendingTV,
         await getPopularTV,
-        await getMostPopularTV,
         await getTopRatedTV,
         await getTVOnTheAir,
         await getTVOnTheAirToday,
         await getLatestTV
       );
-    } else if (type === "popular" && genre == null) {
+    } else if (type === "popular") {
       allList.push(
         await getPopularTV,
-        await getMostPopularTV,
         await getLatestTV,
         await getUpcomingMovies,
         await getPopularMovies,
-        await getLatestMovies,
-        await getMostPopularMovies
+        await getLatestMovies
       );
     }
   } else {
@@ -61,10 +61,8 @@ export const getAll = async (genre, setGenre, type, setIsLoading, setLists) => {
       await getPopularMovies,
       await getTopRatedMovies,
       await getLatestMovies,
-      await getMostPopularMovies,
       await getTrendingTV,
       await getPopularTV,
-      await getMostPopularTV,
       await getTopRatedTV,
       await getTVOnTheAir,
       await getTVOnTheAirToday,

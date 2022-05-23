@@ -6,7 +6,6 @@ export const getTrendingTV = getByUrl("/trending/tv/week", "Trending Now", {
   },
 });
 export const getPopularTV = getByUrl("/tv/popular", "Popular on Netflix");
-export const getMostPopularTV = getByUrl("/discover/tv", "Most Popular");
 export const getTopRatedTV = getByUrl("/tv/top_rated", "Top Rated TV Shows");
 export const getTVOnTheAir = getByUrl("/tv/on_the_air", "TV On The Air");
 export const getTVOnTheAirToday = getByUrl(

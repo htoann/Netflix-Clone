@@ -25,8 +25,7 @@ function List({ list, type }) {
     <div className="list">
       {type && type === "movie"
         ? genreMapTitle(MOVIE_GENRES, list, "Movies")
-        : genreMapTitle(TV_GENRES, list, "TV Series")}
-
+        : genreMapTitle(TV_GENRES, list, "TV Shows")}
       <span className="listTitle">{list.title}</span>
       <Swiper
         className="movieShowcase__container"

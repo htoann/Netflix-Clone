@@ -25,7 +25,9 @@ function ListItem({ movie }) {
       {isClicked && (
         <div className={isClicked ? "listItem__active" : ""}>
           <div className="itemInfo">
-            <h1 className="listItem__active_title">{movie.title}</h1>
+            <h1 className="listItem__active_title">
+              {movie.title || movie.name}
+            </h1>
             <div className="icons">
               <Link to={{ pathname: "/watch" }} state={{ movie: movie }}>
                 <PlayCircleFilledRounded className="icon" />
@@ -39,7 +41,9 @@ function ListItem({ movie }) {
                 {movie.vote_average} Rating
               </span>
               {/* <span className="border p-1 limit">Hello</span> */}
-              <span className="isSeries">{movie.release_date}</span>
+              <span className="isSeries">
+                {movie.release_date || movie.first_air_date}
+              </span>
             </div>
             {/* <div className="itemInfoBottom pb-2">
               <span className="listItem__itemInfoBottom_genre">Genre</span>

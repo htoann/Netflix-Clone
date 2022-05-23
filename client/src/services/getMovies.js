@@ -13,7 +13,6 @@ export const getPopularMovies = getByUrl(
   "/movie/popular",
   "Popular on Netflix"
 );
-export const getMostPopularMovies = getByUrl("/discover/movie", "Most Popular");
 export const getTopRatedMovies = getByUrl(
   "/movie/top_rated",
   "Top Rated Movies"
