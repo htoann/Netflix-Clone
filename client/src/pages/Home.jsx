@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import Featured from "../../components/featured/Featured";
-import List from "../../components/list/List";
-import Navbar from "../../components/navbar/Navbar";
-import "./home.scss";
-import Footer from "../../components/footer/Footer";
-import { getAll } from "../../services/getAll";
+import "../static/sass/pages/home.scss";
+
+import { getAll } from "../services/getAll";
+import Navbar from "../components/Navbar";
+import Featured from "../components/Featured";
+import List from "../components/List";
+import Footer from "../components/Footer";
 
 const Home = ({ type }) => {
   const [lists, setLists] = useState([]);

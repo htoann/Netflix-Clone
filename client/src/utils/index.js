@@ -33,3 +33,19 @@ export const shuffle = (array) => {
   }
   return array;
 };
+
+export const genresMapOptions = (genres) => {
+  return genres.map((genre) => (
+    <option key={genre.id} value={genre.id}>
+      {genre.name}
+    </option>
+  ));
+};
+
+export const genreMapTitle = (genres, list, type) => {
+  return genres.map((genre, key) => (
+    <span key={key} className="listTitle">
+      {genre.id === +list.id && `${genre.name} ${type}`}
+    </span>
+  ));
+};

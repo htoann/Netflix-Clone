@@ -1,9 +1,9 @@
 import React, { useContext, useRef, useState } from "react";
-import "./register.scss";
+import "../static/sass/pages/register.scss";
 import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "./../../authContext/AuthContext";
-import { emailValidation } from "../../utils";
-import { register } from "../../services/getApi";
+import { AuthContext } from "../authContext/AuthContext";
+import { emailValidation } from "../utils";
+import { register } from "../services/getApi";
 
 function Register() {
   const [email, setEmail] = useState("");

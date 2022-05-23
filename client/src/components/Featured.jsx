@@ -1,10 +1,10 @@
-import "./featured.scss";
-import { InfoOutlined, PlayArrowRounded } from "@material-ui/icons";
 import React, { useEffect, useState } from "react";
+import "../static/sass/components/featured.scss";
+import { InfoOutlined, PlayArrowRounded } from "@material-ui/icons";
 import { Link } from "react-router-dom";
-import { getImg, getRandomMovie } from "../../services/getApi";
-import { MOVIE_GENRES, TV_GENRES } from "../../utils/constants";
-import { capitalizeFirstLetter } from "../../utils";
+import { getImg, getRandomMovie } from "../services/getApi";
+import { capitalizeFirstLetter, genresMapOptions } from "../utils";
+import { MOVIE_GENRES, TV_GENRES } from "../utils/constants";
 
 function Featured({ type, setGenre }) {
   const [content, setContent] = useState({});
@@ -12,14 +12,6 @@ function Featured({ type, setGenre }) {
   useEffect(() => {
     getRandomMovie(setContent);
   }, [type]);
-
-  const genresMapOptions = (genres) => {
-    return genres.map((genre) => (
-      <option key={genre.id} value={genre.id}>
-        {genre.name}
-      </option>
-    ));
-  };
 
   return (
     <div className="featured">

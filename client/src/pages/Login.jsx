@@ -1,9 +1,9 @@
 import React, { useContext, useState } from "react";
-import "./login.scss";
-import { login } from "./../../authContext/apiCalls";
-import { AuthContext } from "./../../authContext/AuthContext";
+import "../static/sass/pages/login.scss";
+import { login } from "../authContext/apiCalls";
+import { AuthContext } from "../authContext/AuthContext";
 import { Link } from "react-router-dom";
-import { emailValidation } from "../../utils";
+import { emailValidation } from "../utils";
 
 function Login() {
   const [email, setEmail] = useState();

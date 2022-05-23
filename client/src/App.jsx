@@ -6,11 +6,11 @@ import {
   Navigate,
 } from "react-router-dom";
 import { AuthContext } from "./authContext/AuthContext";
-import Home from "./pages/home/Home";
-import Login from "./pages/login/Login";
-import NotFound from "./pages/notFound/NotFound";
-import Register from "./pages/register/Register";
-import Watch from "./pages/watch/Watch";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import NotFound from "./pages/NotFound";
+import Register from "./pages/Register";
+import Watch from "./pages/Watch";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 

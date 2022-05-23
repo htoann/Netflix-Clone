@@ -1,4 +1,6 @@
 export const GITHUB_URL = "https://github.com/htoann";
+export const FB_URL = "https://www.facebook.com/htoann/";
+export const IG_URL = "https://www.instagram.com/htrantoan/";
 
 export const NETFLIX_NETWORK_ID = 213;
 

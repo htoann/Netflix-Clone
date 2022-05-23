@@ -1,3 +1,5 @@
+import React, { useContext, useEffect, useState } from "react";
+import "../static/sass/components/navbar.scss";
 import {
   Search,
   NotificationsRounded,
@@ -7,11 +9,9 @@ import {
   HelpOutlineOutlined,
   EditOutlined,
 } from "@material-ui/icons";
-import React, { useContext, useEffect, useState } from "react";
-import "./navbar.scss";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../authContext/AuthContext";
-import { logout } from "../../authContext/apiCalls";
+import { AuthContext } from "../authContext/AuthContext";
+import { logout } from "../authContext/apiCalls";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);

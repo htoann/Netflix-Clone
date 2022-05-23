@@ -1,11 +1,11 @@
+import React, { useState } from "react";
+import "../static/sass/components/listItem.scss";
 import {
   AddCircleOutlineRounded,
   PlayCircleFilledRounded,
   ThumbDownOutlined,
   ThumbUpAltOutlined,
 } from "@material-ui/icons";
-import React, { useState } from "react";
-import "./listItem.scss";
 import { Link } from "react-router-dom";
 
 function ListItem({ movie }) {

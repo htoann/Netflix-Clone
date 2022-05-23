@@ -1,5 +1,5 @@
-import React from "react";
-import "./footer.scss";
+import "../static/sass/components/footer.scss";
+import { FB_URL, GITHUB_URL, IG_URL } from "./../utils/constants";
 
 function Footer() {
   return (
@@ -7,11 +7,7 @@ function Footer() {
       <div className="footerContainer">
         <div role="contentinfo" className="member-footer" id="member-footer">
           <div className="social-links flex">
-            <a
-              className="social-link"
-              href="https://www.facebook.com/htoann"
-              aria-label="facebook"
-            >
+            <a className="social-link" href={FB_URL} aria-label="facebook">
               <svg
                 width="24"
                 height="24"
@@ -28,11 +24,7 @@ function Footer() {
                 ></path>
               </svg>
             </a>
-            <a
-              className="social-link"
-              href="https://www.instagram.com/htrantoan/"
-              aria-label="instagram"
-            >
+            <a className="social-link" href={IG_URL} aria-label="instagram">
               <svg
                 width="24"
                 height="24"
@@ -98,20 +90,14 @@ function Footer() {
               </a>
             </li>
             <li className="member-footer-link-wrapper">
-              <a
-                className="member-footer-link"
-                href="https://www.facebook.com/htoann/"
-              >
+              <a className="member-footer-link" href={FB_URL}>
                 <span className="member-footer-link-content">
                   Author Tran Huu Toan
                 </span>
               </a>
             </li>
             <li className="member-footer-link-wrapper">
-              <a
-                className="member-footer-link"
-                href="https://github.com/htoann"
-              >
+              <a className="member-footer-link" href={GITHUB_URL}>
                 <span className="member-footer-link-content">Github</span>
               </a>
             </li>
