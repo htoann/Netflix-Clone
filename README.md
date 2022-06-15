@@ -53,6 +53,8 @@ Here is some screenshots to show how the website would looks like.
 
 Or here is the [Live Example](https://netflixtht.herokuapp.com)
 
+If the site shows "Deceptive site ahead" error, don't worry about it
+
 ## Sources
 
 - Netflix
