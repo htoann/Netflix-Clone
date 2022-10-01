@@ -60,9 +60,3 @@ And this is version 1 with my API : [Live Example](https://netflixtht.herokuapp.
 ## Sources
 
 - Netflix
-
-> If this app has bugs, please let me know
-
-> Don't read my css. It's not good and can make you laugh
-
-> The product is still under development
