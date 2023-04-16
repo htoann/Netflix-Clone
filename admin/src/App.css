@@ -1,0 +1,260 @@
+.container {
+  display: flex;
+  margin-top: 10px;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  font-size: 25px;
+  color: gray;
+}
+
+/* Pages */
+
+/* Create */
+
+select {
+  padding: 10px;
+  font-size: 15px;
+  min-width: 21vmax;
+}
+
+.buttonMain {
+  margin-top: 20px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: darkblue;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  max-width: 100px;
+}
+
+.wrap {
+  flex: 4;
+  margin-bottom: 20px;
+  margin-left: 40px;
+}
+
+.title {
+  color: black;
+  text-align: left;
+}
+
+.mid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  padding: 10px 0;
+}
+
+.form {
+  margin-top: 10px;
+}
+
+.right {
+  padding-left: 120px;
+}
+
+.item > label {
+  color: gray;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.item > input {
+  border: 1px solid gray;
+  padding: 8px;
+  font-size: 15px;
+  width: 300px;
+}
+
+.item > select {
+  padding: 10px;
+  font-size: 15px;
+  min-width: 16.5vmax;
+}
+
+.selectContent {
+  height: 40vh;
+}
+
+/* Show List */
+
+.list {
+  flex: 4;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+}
+
+.listImg {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.listEdit {
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  background-color: #3bb077;
+  color: white;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.listDelete {
+  color: red;
+  cursor: pointer;
+}
+
+.addButton {
+  width: 150px;
+  border: none;
+  padding: 5px;
+  background-color: teal;
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Update */
+
+.wrapUpdate {
+  flex: 4;
+  padding: 20px;
+}
+
+.topUpdate {
+  display: flex;
+}
+
+.topLeftUpdate,
+.topRightUpdate {
+  flex: 1;
+}
+
+.topRightUpdate {
+  padding: 20px;
+  margin: 20px;
+  -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+}
+
+.infoImgUpdate {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.infoTopUpdate {
+  display: flex;
+  align-items: center;
+}
+
+.nameUpdate {
+  font-weight: 600;
+}
+
+.infoBottomUpdate {
+  margin-top: 10px;
+}
+
+.infoItemUpdate {
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.infoKeyUpdate {
+  min-width: 100%;
+}
+
+.infoValueUpdate {
+  font-weight: 300;
+  margin-bottom: 10px;
+  min-width: 100vh;
+}
+
+.bottomUpdate {
+  padding: 20px;
+  margin: 20px;
+  -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+}
+
+.updateFormUpdate {
+  display: flex;
+  justify-content: space-between;
+}
+
+.formLeftUpdate {
+  display: flex;
+  flex-direction: column;
+}
+
+.formLeftUpdate > label {
+  margin-bottom: 10px;
+  color: gray;
+}
+
+.formLeftUpdate > input {
+  margin-bottom: 10px;
+  border: none;
+  padding: 5px;
+  border-bottom: 1px solid gray;
+  padding-right: 150px;
+}
+
+.formLeftUpdate > select {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.formRightUpdate {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.updateUpdate svg {
+  cursor: pointer;
+}
+
+.uploadImgUpdate {
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-right: 20px;
+  cursor: zoom-in;
+  transition: 1s;
+}

@@ -86,7 +86,7 @@ const Navbar = () => {
               </span>
               <hr />
               <span>
-                <a href="https://netflixadm.herokuapp.com/">
+                <a href="http://localhost:3001/">
                   <AccountCircleOutlined className="icon" />
                   Netflix Admin
                 </a>

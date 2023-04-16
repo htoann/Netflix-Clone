@@ -1,0 +1,114 @@
+# docker compose version which is currently 3.8
+version: "3.8"
+
+# services : is a list of our container
+services:
+  # name is optional for our mongodb
+  db:
+    # since mongo is an offical image we can use it.
+    image: "mongo"
+
+    # the port that we want to publish for mongodb
+    ports:
+      - "27017:27017"
+
+    # our mongodb depends on volume to keep the data alive.
+    volumes:
+      - data:/data/db
+
+    # our environment variable
+    env_file: .env
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: "${DB_USERNAME}"
+      MONGO_INITDB_ROOT_PASSWORD: "${DB_PASSWORD}"
+
+  # name is optional for our backend
+  api:
+    # to build an image based on Dockerfile
+    # it looks in this folder to find Dockerfile to build an image
+    build: ./api
+    # the port that we want to publish for backend
+    ports:
+      - "8080:8080"
+    # add bind mount volume to keep have updated source code
+    volumes:
+      - ./api:/app
+    # our environment variable
+    env_file: .env
+    environment:
+      PORT: "${API_PORT}"
+      DB_USERNAME: "${DB_USERNAME}"
+      DB_PASSWORD: "${DB_PASSWORD}"
+      DB_HOST: "${DB_HOST}"
+      DB_PORT: "${DB_PORT}"
+      DB_NAME: "${DB_NAME}"
+      SECRET_KEY: "${API_SECRET_KEY}"
+
+    # depends_on means it will start our backend container once mongo-container is  up and running.
+    depends_on:
+      - db
+
+  # name is optional for our frontend
+  client:
+    # to build an image based on Dockerfile
+    # it looks in this folder to find Dockerfile to build an image
+    build: ./client
+
+    # the port that we want to publish for frontend
+    ports:
+      - "3000:3000"
+    # add bind mount volume to keep have updated source code
+    volumes:
+      - ./client/src:/app/src
+    # allow interactive mode
+    stdin_open: true
+    tty: true
+    # our environment variable
+    env_file: .env
+    environment:
+      REACT_APP_API_URL: "${API_URL}"
+
+    # it will start our frontend container once backend-container is  up and running.
+    depends_on:
+      - api
+
+  # name is optional for our console
+  admin:
+    # to build an image based on Dockerfile
+    # it looks in this folder to find Dockerfile to build an image
+    build: ./admin
+
+    # the port that we want to publish for frontend
+    ports:
+      - "3001:3001"
+    # add bind mount volume to keep have updated source code
+    volumes:
+      - ./admin/src:/app/src
+    # allow interactive mode
+    stdin_open: true
+    tty: true
+    # our environment variable
+    env_file: .env
+    environment:
+      REACT_APP_API_URL: "${API_URL}"
+      FIREBASE_API: "${FIREBASE_API}"
+
+    # it will start our frontend container once backend-container is  up and running.
+    depends_on:
+      - api
+
+  nginx:
+    depends_on:
+      - api
+      - client
+      - admin
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: ./nginx
+    ports:
+      - "3050:80"
+
+# declare the volumes name that our app is using.
+volumes:
+  data:

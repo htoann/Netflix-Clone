@@ -11,8 +11,15 @@ const path = require("path");
 
 dotenv.config();
 
+function generateMongoUrlFromEnv(env) {
+  const { DB_USERNAME, DB_PASSWORD, DB_HOST, DB_PORT, DB_NAME } = env;
+  const url = `mongodb://${DB_USERNAME}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`;
+  return url;
+}
+
+
 mongoose
-  .connect(process.env.MONGO_URL)
+  .connect(generateMongoUrlFromEnv(process.env))
   .then(() => console.log("DB connection success..."))
   .catch((err) => console.log(err));
 
@@ -36,7 +43,7 @@ app.use("/api/lists", listRoute);
 app.use(express.static(path.join(__dirname, "/client/build")));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "/client/build", "index.html"));
+  res.send({data: "ok", env: process.env})
 });
 
 app.listen(process.env.PORT || 8800, () => {

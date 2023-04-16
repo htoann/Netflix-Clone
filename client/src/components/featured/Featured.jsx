@@ -42,12 +42,9 @@ function Featured({ type, setGenre }) {
       )}
       <div className="linear"></div>
       {content ? (
+        <>
         <img width="100%" src={content.img} alt="" />
-      ) : (
-        <div className="loading">Loading...</div>
-      )}
-
-      <div className="info">
+        <div className="info">
         <div className="title">{content.title}</div>
         <div className="desc">{content.desc}</div>
         <div className="buttons">
@@ -63,6 +60,12 @@ function Featured({ type, setGenre }) {
           </button>
         </div>
       </div>
+      </>
+      ) : (
+        <div className="loading">Loading...</div>
+      )}
+
+      
       <div className="fadeBottom"></div>
     </div>
   );
